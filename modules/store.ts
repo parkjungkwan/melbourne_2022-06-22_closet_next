@@ -1,7 +1,7 @@
 import { AnyAction, CombinedState, configureStore, combineReducers } from '@reduxjs/toolkit'
 import { createWrapper, HYDRATE  } from 'next-redux-wrapper'
 import logger from 'redux-logger';
-import articleReducer  from '@/modules/articles';
+import { articleReducer }  from '@/modules';
 import { IArticleState } from './articles'
 import { IBoardState } from './boards';
 import { IClosetState } from './closets';
