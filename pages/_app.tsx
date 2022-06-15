@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import LoginTestPage from './user/loginTest'
+import LoginTestPage from './users/loginTest'
 
 function MyApp({ Component, pageProps: {...pageProps} }: AppProps) {
   return ( 

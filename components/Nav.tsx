@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css'
-import Login from './user/Login'
-import LoginPage from '@/pages/user/login'
+import Login from './users/Login'
+import LoginPage from '@/pages/users/login'
 import React, {useState} from 'react'
-import RegisterPage from '@/pages/user/register'
+import RegisterPage from '@/pages/users/register'
 import Link from 'next/link'
 export function Nav() {
     return (
@@ -57,10 +57,10 @@ export function Nav() {
         UserPage
         </a>
     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a className="dropdown-item" href="#">Account Remove</a></li>
-        <li><a className="dropdown-item" href="#">Account Update</a></li>
-        <li><a className="dropdown-item" href="#">Find ID</a></li>
-        <li><a className="dropdown-item" href="#">Find PW</a></li>
+        <li><a className="dropdown-item" href="/user/remove">Account Remove</a></li>
+        <li><a className="dropdown-item" href="/user/update">Account Update</a></li>
+        <li><a className="dropdown-item" href="/user/findId">Find ID</a></li>
+        <li><a className="dropdown-item" href="/user/findPw">Find PW</a></li>
     </ul>
     </li>
 
@@ -94,21 +94,21 @@ export function Nav() {
             </div>
             </div>
             &nbsp;
-            <button  type = 'button' className='ml-5 btn btn-outline-dark' data-bs-toggle="modal1" data-bs-target="#modal1">
+            <button  type = 'button' className='btn btn-outline-dark' data-bs-toggle="modal" data-bs-target="#modal1">
                 <h5>Register</h5>
-                </button>
-                <div className="modal fade" id="modal"tabIndex={-1} aria-labelledby="exampleModalLabel1" aria-hidden="true">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">JOIN</h5>
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </button>
+                <div className="modal fade" id="modal1"tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                     <h5 className="modal-title" id="exampleModalLabel">JOIN</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 </div>
+                 <div className="modal-body">
+                     <RegisterPage/>
+                 </div>
                 </div>
-                <div className='modal-body'>
-                    <RegisterPage newUser={[]}/>
-                </div>
-                    </div>
-                </div>
+            </div>
             </div>
         </div>
     </div>
