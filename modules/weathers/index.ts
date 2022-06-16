@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const weatherSliceType = "slice/style";
+const weatherSliceType = "slice/weather";
 
 export interface IWeatherState {
 	value: number;

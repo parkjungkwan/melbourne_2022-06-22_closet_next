@@ -1,28 +1,82 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const userSliceType = "slice/user";
+export interface IUserType {
+    userName: string, name: string, password: string, email: string
+}
 
-export interface IUserState {
-	value: number;
+export interface IUserState{
+    data: IUserType[]
+    status: 'idle' | 'loading' | 'failed'
 }
 
 const initialState: IUserState = {
-	value: 0
+    data: [],
+    status: 'idle'
 }
 
 const userSlice = createSlice({
-	initialState,
-    name: userSliceType,
-    reducers: {
-    	increase: (state) => {
-        	state.value += 1;
+	name: 'userSlice',
+    initialState,
+    reducers:{
+        joinRequest(state: IUserState, _payload){
+            state.status = 'loading';
+            
         },
-        increaseByAmount: (state, action: PayloadAction<number>) => {
-        	state.value += action.payload;
+        joinSuccess(state: IUserState, {payload}){
+            state.status = 'idle'
+            state.data = [...state.data, payload]
+            alert(`진행 : 회원가입 데이터 ${state.data}`)
+        },
+        joinFailure(state: IUserState, {payload}){
+            state.status = 'failed'
+            state.data = payload
+        },
+        loginRequest(state: IUserState, _payload){
+            state.status = 'loading';
+            
+        },
+        loginSuccess(state: IUserState, {payload}){
+            state.status = 'idle'
+            state.data = [...state.data, payload]
+            alert(`진행 : 회원가입 데이터 ${state.data}`)
+        },
+        loginFailure(state: IUserState, {payload}){
+            state.status = 'failed'
+            state.data = payload
+        },
+        updateRequest(state: IUserState, _payload){
+            state.status = 'loading';
+            
+        },
+        updateSuccess(state: IUserState, {payload}){
+            state.status = 'idle'
+            state.data = [...state.data, payload]
+            alert(`진행 : 회원가입 데이터 ${state.data}`)
+        },
+        updateFailure(state: IUserState, {payload}){
+            state.status = 'failed'
+            state.data = payload
+        },
+        findAllRequest(state: IUserState, _payload){
+            state.status = 'loading';
+            
+        },
+        findAllSuccess(state: IUserState, {payload}){
+            state.status = 'idle'
+            state.data = [...state.data, payload]
+            alert(`진행 : 회원가입 데이터 ${state.data}`)
+        },
+        findAllFailure(state: IUserState, {payload}){
+            state.status = 'failed'
+            state.data = payload
         }
     }
 })
 
-const {reducer, actions} = userSlice
-export const userActions = actions
-export default reducer
+export const { joinRequest, joinSuccess, joinFailure,
+    loginRequest, loginSuccess, loginFailure,
+    updateRequest, updateSuccess, updateFailure,
+    findAllRequest, findAllSuccess, findAllFailure,
+
+} = userSlice.actions;
+export default userSlice;

@@ -24,4 +24,4 @@ const eventSlice = createSlice({
 })
 
 export const { increase, increaseByAmount } = eventSlice.actions;
-export default eventSlice;
+export default eventSlice.reducer;

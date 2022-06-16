@@ -1,18 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const clothesSliceType = "slice/clothes";
+const clothSliceType = "slice/cloth";
 
-export interface IClothesState {
+export interface IClothState {
 	value: number;
 }
 
-const initialState: IClothesState = {
+const initialState: IClothState = {
 	value: 0
 }
 
-const clothesSlice = createSlice({
+const clothSlice = createSlice({
 	initialState,
-    name: clothesSliceType,
+    name: clothSliceType,
     reducers: {
     	increase: (state) => {
         	state.value += 1;
@@ -23,5 +23,5 @@ const clothesSlice = createSlice({
     }
 })
 
-export const { increase, increaseByAmount } = clothesSlice.actions;
-export default clothesSlice;
+export const { increase, increaseByAmount } = clothSlice.actions;
+export default clothSlice;

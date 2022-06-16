@@ -24,4 +24,4 @@ const articleSlice = createSlice({
 })
 
 export const { increase, increaseByAmount } = articleSlice.actions;
-export default articleSlice.reducer;
+export default articleSlice;

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const colsetSliceType = "slice/colset";
+const closetSliceType = "slice/closet";
 
 export interface IClosetState {
 	value: number;
@@ -12,7 +12,7 @@ const initialState: IClosetState = {
 
 const closetSlice = createSlice({
 	initialState,
-    name: colsetSliceType,
+    name: closetSliceType,
     reducers: {
     	increase: (state) => {
         	state.value += 1;
